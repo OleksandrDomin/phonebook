@@ -1,0 +1,30 @@
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 70px;
+  color: green;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo {
+
+  font-size: 100px;
+  font-weight: 400;
+
+  color: green;
+  transition: scale var(--transition);
+}

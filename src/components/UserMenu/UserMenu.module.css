@@ -1,21 +1,50 @@
+.navList {
+  display: flex;
+  gap: 15px;
+}
+
 .wrapper {
   display: flex;
+  gap: 15px;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
 }
 
-.username {
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #023802;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 30px;
+  min-width: 80px;
+  padding: 0 5px;
+
+  color: black;
   font-weight: 700;
+  text-transform: uppercase;
+
+  border: 2px solid black;
+  border-radius: 3px;
+
+  background-color: #fce627;
+  background-repeat: no-repeat;
+  background-position: 30% 50%;
+
+  transition: scale var(--transition);
 }
 
-.button {
-  font-weight: 600;
-  color: #382b22;
-  padding: 3px;
-  background: #fff9e0;
-  border: 2px solid #17a2b8;
-  border-radius: 0.75em;
-  transform-style: preserve-3d;
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
+.navLink:hover,
+.navLink:focus {
+  scale: 1.08;
+  background-color: gold;
 }

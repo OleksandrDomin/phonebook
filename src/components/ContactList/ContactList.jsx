@@ -1,35 +1,45 @@
-import React from 'react';
-import css from './ContactList.module.css'
-import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/contacts/operations'
-import { selectContacts, selectFilter } from '../../redux/contacts/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { deleteContactThunk } from 'redux/operations';
+import { selectContacts, selectFilteredContacts } from 'redux/selectors';
+import css from './ContactList.module.css';
 
-export default function ContactList() {
-  const dispatch = useDispatch()
+import { VscAccount } from "react-icons/vsc";
 
+export const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  const filtration = useSelector(selectFilter);
+  const filteredContacts = useSelector(selectFilteredContacts);
+  const dispatch = useDispatch();
 
-  const handleDelete = (id) => { dispatch(deleteContact(id)) };
-
-  const filterContact = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filtration.toLowerCase())
-  );
-  
   return (
-      <ul>
-        {filterContact.map(({name, phone, id}) => (
-          <li key={id}>
-            {name}: {phone}
-            <button
-              type="button"
-              className={css.button}
-              id={id}
-              onClick={() => {handleDelete(id)}}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-  )
-}
+    <>
+      {contacts.length === 0 ? (
+        <h3 className={css.title}>There are no contacts in your phone book.</h3>
+      ) : (
+        <ul className={css.contactList}>
+          {filteredContacts.map(({ name, id, number }) => (
+            <li key={id} className={css.contactListItem}>
+              <p>
+                <span><VscAccount/>  </span>
+                
+                <span>{`${name}: `}</span>
+                <span>{number}</span>
+              </p>
+              <button
+                className={css.contactListItemBtn}
+                type="button"
+                onClick={() =>
+                  dispatch(deleteContactThunk(id)).catch(() =>
+                    toast.error('Server request error. Please try again.')
+                  )
+                }
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  );
+};

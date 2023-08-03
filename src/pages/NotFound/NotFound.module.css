@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  top: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+
+  color: var(--white-color);
+}
+
+.title {
+  font-size: 120px;
+  color: var(--orange-color);
+}
+
+.link {
+  padding: 8px 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  color: var(--black-color);
+
+  background-color: var(--orange-color);
+  border-radius: 5px;
+
+  transition: scale var(--transition);
+}
+
+.link:hover,
+.link:focus {
+  scale: 1.08;
+}

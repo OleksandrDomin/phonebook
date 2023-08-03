@@ -1,11 +1,48 @@
-.button {
-  font-weight: 600;
-  color: #382b22;
-  padding: 3px;
-  background: #fff9e0;
-  border: 2px solid #17a2b8;
-  border-radius: 0.75em;
-  transform-style: preserve-3d;
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
-    background 150ms cubic-bezier(0, 0, 0.58, 1);
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  list-style: none;
+}
+
+.title {
+  color: black;
+}
+
+.contactListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: green;
+}
+
+
+
+.contactListItemBtn {
+  min-width: 62px;
+  min-height: 20px;
+  margin-left: auto;
+
+  font-size: 12px;
+  font-weight: 500;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+  
+    border: 2px solid black;
+    border-radius: 3px;
+  
+    background-color: #fce627;
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
+  
+    transition: scale var(--transition);
+}
+
+.contactListItemBtn:hover,
+.contactListItemBtn:focus {
+  scale: 1.08;
+  background-color: gold;
 }

@@ -1,11 +1,33 @@
-.link {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px;
-  font-weight: 700;
-  color: #2a363b;
+.navList {
+  display: flex;
+  gap: 15px;
 }
 
-.link.active {
-  color: #e84a5f;
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 30px;
+    min-width: 80px;
+    padding: 0 5px;
+  
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+  
+    border: 2px solid black;
+    border-radius: 3px;
+  
+    background-color: #fce627;
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
+  
+    transition: scale var(--transition);
+}
+
+.navLink:hover,
+.navLink:focus {
+  scale: 1.08;
+  background-color: gold;
 }

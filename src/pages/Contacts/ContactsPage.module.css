@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  top: 70px;
+  width: 500px;
+
+  /* display: flex; */
+  justify-content: center;
+  gap: 100px;
+  padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.title {
+  margin-bottom: 15px;
+  text-align: center;
+  color: black;
+}
+
+/* .phoneBookWrapper {
+  min-width: 300px;
+} */
+
+.contactsWrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  padding: 15px;
+
+  border: 3px solid var(--orange-color);
+}
