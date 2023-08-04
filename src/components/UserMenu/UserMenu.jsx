@@ -21,7 +21,7 @@ export const UserMenu = () => {
     <div className={css.wrapper}>
       <div className={css.userMenu}>
 
-        <p>WELCOME {user.email} to your PHONEBOOK</p>
+        <p>WELCOME, {user.name} in your PHONEBOOK</p>
       </div>
 
       <ul className={css.navList}>
